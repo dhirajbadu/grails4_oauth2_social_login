@@ -23,13 +23,11 @@ class OktaApi20 extends DefaultApi20 {
     @Override
     public String getAccessTokenEndpoint() {
         return Holders.config.grails.plugin.springsecurity.oauth2.providers.okta.tokenUrl
-       // return "https://dev-45012930.okta.com/oauth2/default/v1/token";
     }
 
     @Override
     protected String getAuthorizationBaseUrl() {
         return Holders.config.grails.plugin.springsecurity.oauth2.providers.okta.authorizeUrl
-        //return "https://dev-45012930.okta.com/oauth2/default/v1/authorize";
     }
 
     @Override
