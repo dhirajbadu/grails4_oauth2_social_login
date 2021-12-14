@@ -62,7 +62,12 @@ class OktaOAuth2Service extends OAuth2AbstractProviderService{
             authorities.add(new SimpleGrantedAuthority("ROLE_"+role.toUpperCase()));
         }
         def principal = new CustomGrailsUser(user?.email, user?.email+"@123RocK", true, true, true, true,authorities , 0 , "okta")
-
+        // if you want to create a user in db then writer your code here
+        // if you want to get user principal from spring security userDetailsService then uncomment the code below
+        // def userDetailsService = grails.util.Holders.grailsApplication.mainContext.getBean("userDetailsService")
+        // def principal  = userDetailsService.loadUserByUsername(user?.email)
+        // return new GoogleOauth2SpringToken(accessToken, user.email, providerID , principal, principal.authorities)
+        
         new OktaOauth2SpringToken(accessToken, user?.email, providerID , principal, authorities)
     }
 }
