@@ -61,6 +61,13 @@ class GoogleOAuth2Service extends OAuth2AbstractProviderService{
             println("rolessss L : " + role)
             authorities.add(new SimpleGrantedAuthority("ROLE_"+role.toUpperCase()));
         }
+        
+        // if you want to create a user in db then writer your code here
+        // if you want to get user principal from spring security userDetailsService then uncomment the code below
+        // def userDetailsService = grails.util.Holders.grailsApplication.mainContext.getBean("userDetailsService")
+        // def principal  = userDetailsService.loadUserByUsername(user?.email)
+        // return new GoogleOauth2SpringToken(accessToken, user.email, providerID , principal, principal.authorities)
+        
         def principal = new CustomGrailsUser(user?.email, user?.email+"@123RocK", true, true, true, true,authorities , 0 , "google")
 
         new GoogleOauth2SpringToken(accessToken, user?.email, providerID , principal, authorities)
