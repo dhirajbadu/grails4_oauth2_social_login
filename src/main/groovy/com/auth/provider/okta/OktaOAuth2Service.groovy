@@ -66,7 +66,7 @@ class OktaOAuth2Service extends OAuth2AbstractProviderService{
         // if you want to get user principal from spring security userDetailsService then uncomment the code below
         // def userDetailsService = grails.util.Holders.grailsApplication.mainContext.getBean("userDetailsService")
         // def principal  = userDetailsService.loadUserByUsername(user?.email)
-        // return new GoogleOauth2SpringToken(accessToken, user.email, providerID , principal, principal.authorities)
+        // return new OktaOauth2SpringToken(accessToken, user.email, providerID , principal, principal.authorities)
         
         new OktaOauth2SpringToken(accessToken, user?.email, providerID , principal, authorities)
     }
