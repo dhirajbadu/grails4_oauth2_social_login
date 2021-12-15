@@ -12,13 +12,7 @@ class HomeController {
     @Secured("permitAll")
     def index() {
         if(springSecurityService?.isLoggedIn()){
-            if(principal.providerId == "google"){
-                redirect(action:'googleUser')
-            }else if(principal.providerId == "okta"){
-                redirect(action:'oktaUser')
-            }else{
-                render(view: '/index')
-            }
+            redirect(action:'googleUser')
             return
         }else{
             render(view: '/index')

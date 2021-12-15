@@ -1,9 +1,8 @@
 package auth.demo
 
-import com.auth.provider.okta.OktaOAuth2Service
-import com.auth.provider.google.GoogleOAuth2Service
 import grails.plugin.springsecurity.oauth2.SpringSecurityOauth2BaseService
 import grails.plugin.springsecurity.oauth2.exception.OAuth2Exception
+import spring.security.oauth2.google.provider.GoogleOAuth2Service
 
 class BootStrap {
 
@@ -15,7 +14,7 @@ class BootStrap {
 
     def initProvider(){
         registerGoogleProvider()
-        registerOktaProvider()
+
     }
 
     def registerGoogleProvider(){
@@ -29,7 +28,7 @@ class BootStrap {
         }
     }
 
-    def registerOktaProvider(){
+    /*def registerOktaProvider(){
         def SpringSecurityOauth2BaseService oAuth2BaseService = grails.util.Holders.grailsApplication.mainContext.getBean('springSecurityOauth2BaseService') as SpringSecurityOauth2BaseService
         def OktaOAuth2Service oktaOAuth2Service = grails.util.Holders.grailsApplication.mainContext.getBean('oktaOAuth2Service') as OktaOAuth2Service
         try {
@@ -38,5 +37,5 @@ class BootStrap {
             log.error("There was an oAuth2Exception", exception)
             log.error("OAuth2 Google not loaded")
         }
-    }
+    }*/
 }
