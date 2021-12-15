@@ -15,19 +15,12 @@
                   google:
                         api_key: 'you api key'
                         api_secret: 'your api secret'
-                        successUri: '/oauth2/google/success'
-                        failureUri: '/oauth2/google/failure'
-                        callback: '/oauth2/google/callback'
-                        scopes: 'https://www.googleapis.com/auth/userinfo.email'
+                       
                     okta:
                         api_key: 'your api key'
                         api_secret: 'your api secret'
                         userInfoUrl: '{your okta url}/oauth2/default/v1/userinfo'
                         authorizeUrl: '{your okta url}/oauth2/default/v1/authorize'
                         tokenUrl: '{your okta url}/oauth2/default/v1/token'
-                        scopes: 'email profile openid groups'
-                        successUri: '/oauth2/okta/success'
-                        failureUri: '/oauth2/okta/failure'
-                        callback: '/oauth2/okta/callback'
                         revokeUrl: '{your okta url}/oauth2/default/v1/revoke'
 
