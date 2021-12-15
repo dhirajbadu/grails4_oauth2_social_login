@@ -1,0 +1,6 @@
+#Wed, 15 Dec 2021 17:46:49 +0545
+
+info.app.version=0.1
+info.app.name=grails4_oauth2_social_login
+grails.env=development
+info.app.grailsVersion=4.0.7
