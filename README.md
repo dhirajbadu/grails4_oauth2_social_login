@@ -1,4 +1,5 @@
 # Spring security oauth2 google okta login
+grailsVersion=4.0.7
 ### grails4 oauth2 social login
 ### grails4 oauth2 google login
 ### grails4 oauth2 okta login
